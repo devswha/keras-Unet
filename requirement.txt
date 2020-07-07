@@ -1,0 +1,8 @@
+image==1.5.32
+Keras==2.4.3
+numpy==1.19.0
+Pillow==7.2.0
+scipy==1.4.1
+tensorboard==2.2.2
+tensorflow-gpu==2.2.0
+tifffile==2020.7.4
