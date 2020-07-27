@@ -17,6 +17,7 @@ class myUnet(object):
         mydata = dataProcess(self.img_rows, self.img_cols)
         imgs_train, imgs_mask_train = mydata.load_train_data()
         imgs_test = mydata.load_test_data()
+        print(imgs_test)
         return imgs_train, imgs_mask_train, imgs_test
 
     def train(self, load_pretrained):
