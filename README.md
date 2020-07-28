@@ -27,21 +27,20 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 
 ## Overlap-tile
 
-Sliding window
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/sliding_window.png" width="30%" height="30%">
+<p align="center">
+<img src="https://github.com/devswha/keras-Unet/blob/master/images/sliding_window.png" width="30%" height="30%"> <br/>Sliding window</td>
+</p>
 
-Patch
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/patch.png" width="30%" height="30%">
+<p align="center">
+<img src="https://github.com/devswha/keras-Unet/blob/master/images/patch.png" width="50%" height="50%"> <br/>Patch</td>
+</p>
 
-
-
-- Overlap 비율이 적기 때문에 속도 향상이 가능하다. 
-- 하지만 patch size 가 넓은 범위의 이미지를 한번에 인식하다보니 context(이미지 픽셀 간 관계) 성능은 좋지만 localization 성능이 낮아진다. 
-- 따라서 해당 논문에서는 이 localization 문제를 해결하기 위해 Unet architecture 과 overlap-tile 방식을 제안하였다.
-
+- The low overlap ratio enables speed improvement.
+- However, as patch size recognizes a wide range of images at once, the performance of context is good but the performance of localization is lower.
+- Thus, in the corresponding paper, the Unet architecture and overlap-tile methods were proposed to solve this localization problem.
 
 Overlap-tile
-<img src="./overlap_tile.png" width="100%" height="100%">
+<img src="https://github.com/devswha/keras-Unet/blob/master/images/overlap_tile.png" width="100%" height="100%">
 
 - 전체 이미지는 크다보니 각 patch 별로 이미지를 인식하는데, patch 크기(노란색) 보다 Input이 클 경우가 있다.
 - 그럴 경우, 비어있는 부분을 patch 영역을 미러링하여 채워넣는다
