@@ -63,10 +63,10 @@ We preprocessed the images for data augmentation. Following preprocessing are :
 
 You can easily to understand refer this [page](https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/README.md#preprocessing)
 
+
 <p align="center">
   <img width="250" height="250" src="https://github.com/ugent-korea/pytorch-unet-segmentation/blob/master/readme_images/original.png"> <br />Original Image</td>
 </p>
-
 
 <table border=0 width="99%" >
 	<tbody> 
@@ -109,8 +109,7 @@ You can easily to understand refer this [page](https://github.com/ugent-korea/py
 	</tbody>
 </table>       
 
-#### Crop and Pad
-
+### Crop and Pad
 <table border=0 width="99%" >
 	<tbody> 
     <tr>		<td width="99%" align="center" colspan="4"><strong>Crop</td>
@@ -144,3 +143,73 @@ To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?tex
       		</tr>
 	</tbody>
 </table>         
+
+
+
+## Network Architecture
+
+<p align="center">
+    <img src="https://github.com/devswha/keras-Unet/blob/master/images/unet.png" width="70%" height="70%">
+</p>
+
+
+### Contracting Path (Fully Convolution)
+- Typical convolutional network.
+- 3x3 convolution layer with max-pooling and drop out
+- Extracts the image feature accurately, but reduces the size of the image feature map.
+
+
+### Expanding Path (Deconvolution)
+- Output segmentation map by upsampling the feature map
+- 2x2 up-convolution and 3x3 convolution layer with concatenation
+- The disadvantage of upsampling process is that the localization information in the image feature map will be lost.
+- Therefore, localization information less lost by concatenating the feature map after up-conv with the same level feature map.
+- Last one is 1x1 convolution mapping
+
+## Result
+
+<table border=0 width="99%" >
+	<tbody> 
+    <tr>
+	    </tr>
+		<tr>
+			<td width="50%" align="center"> <img src=""> <br />  Test Data</td>
+			<td width="50%" align="center"> <img src=""> <br /> Prediction</td> 
+		</tr>
+      		</tr>
+	</tbody>
+</table>      
+
+## Usage
+When you download my code, your directory tree should consist of the following
+```
+keras-Unet/
+├── data
+    ├── test-volume.tif
+    ├── train-labels.tif
+    └── train-volume.tif
+├── images
+├── jupyter.ipynb
+├── augmentation.py
+├── model.py
+├── preprocessing.py
+├── README.md
+├── train.py
+├── utills.py
+└── requirement.txt
+```
+You can change the root directory of data to change the *data_path* in pre-processing.py and augmentation.py 
+
+However, at least three original competition data (test-volume, train-labels, train-volume) should put in the *data_path*
+
+
+```bash
+$ python3 augmentation.py
+$ python3 preprocessing.py
+$ python3 train.py
+```
+
+Easly to use my program just run augmentation-preprocessing-train step.
+You can get the prediction.tif for the result.
+
+And you can just run the **jupyter.ipynb** with [jupyter notebook](https://jupyter.org/) to see how U-net works. 
