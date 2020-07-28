@@ -168,17 +168,10 @@ To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?tex
 
 ## Result
 
-<table border=0 width="99%" >
-	<tbody> 
-    <tr>
-	    </tr>
-		<tr>
-			<td width="50%" align="center"> <img src=""> <br />  Test Data</td>
-			<td width="50%" align="center"> <img src=""> <br /> Prediction</td> 
-		</tr>
-      		</tr>
-	</tbody>
-</table>      
+<p align="center">
+    <img src="https://github.com/devswha/keras-Unet/blob/master/images/result.gif" width="100%" height="100%">
+</p>
+
 
 ## Usage
 When you download my code, your directory tree should consist of the following

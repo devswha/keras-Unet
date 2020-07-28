@@ -7,9 +7,7 @@ import os
 
 
 class dataAugment(object):
-    def __init__(self, out_rows, out_cols, data_path="./data"):
-        self.out_rows = out_rows
-        self.out_cols = out_cols
+    def __init__(self, data_path="./data"):
         self.data_path = data_path
 
     def augmentation(self):
@@ -110,7 +108,7 @@ class dataAugment(object):
 
 if __name__ == "__main__":
     try:
-        mydata = dataAugment(512, 512)
+        mydata = dataAugment()
         mydata.augmentation()
     except RuntimeError as e:
         print(e)

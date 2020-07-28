@@ -63,18 +63,19 @@ class dataProcess(object):
         for i, page in enumerate(ImageSequence.Iterator(isbi_img)):
             page.save(self.data_path+"/test/images/" + str(i) + ".png")
 
-        imgs = os.listdir(self.data_path + "/test/images/")
+        imgs = os.listdir(self.data_path + "/raw/images/")
+        imgs = sorted([str(i).rstrip('.png') for i in imgs], key=int) # sort accending
         img_datas = np.ndarray((len(imgs), self.out_rows, self.out_cols, 1), dtype=np.uint8)
         i = 0
         for imgname in imgs:
-            img = load_img(self.data_path + "/test/images/" + imgname, color_mode="grayscale")
+            img = load_img(self.data_path + "/test/images/" + imgname + ".png", color_mode="grayscale")
             img_datas[i] = img_to_array(img)
             i += 1
             if i % len(imgs) == 0:
                 print('Done: {0}/{1} images'.format(i, len(imgs)))
         print('loading done')
         np.save(self.data_path + '/npy/imgs_test.npy', img_datas)
-        print('Saving to imgs_test.npy files done.')
+        print('Saving to .npy files done.')
 
     def load_train_data(self):
         print('-' * 30)

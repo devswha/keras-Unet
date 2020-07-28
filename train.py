@@ -4,6 +4,12 @@ from tensorflow.keras.callbacks import ModelCheckpoint, TensorBoard, ReduceLROnP
 from tensorflow.keras.models import load_model
 from tensorflow.keras.optimizers import Adam
 from tifffile import imsave as tifsave
+import tensorflow as tf
+
+# Use other GPU in our mlti-gpu server
+# If you have only one GPU, change 1 to 0 or delete below lines
+gpus = tf.config.experimental.list_physical_devices('GPU')
+tf.config.experimental.set_visible_devices(gpus[1], 'GPU')
 
 
 class myUnet(object):
@@ -17,7 +23,6 @@ class myUnet(object):
         mydata = dataProcess(self.img_rows, self.img_cols)
         imgs_train, imgs_mask_train = mydata.load_train_data()
         imgs_test = mydata.load_test_data()
-        print(imgs_test)
         return imgs_train, imgs_mask_train, imgs_test
 
     def train(self, load_pretrained):
@@ -33,14 +38,14 @@ class myUnet(object):
             model = load_model(model_name)
             model.compile(optimizer=Adam(lr=1e-4), loss='binary_crossentropy', metrics=['accuracy'])
             model_checkpoint = ModelCheckpoint('unet.h5', monitor='val_loss', verbose=1, save_best_only=True)
-            model.fit(imgs_train, imgs_mask_train, batch_size=2, epochs=30, verbose=1,
+            model.fit(imgs_train, imgs_mask_train, batch_size=4, epochs=30, verbose=1,
                       validation_split=0.2, shuffle=True, callbacks=[logging, model_checkpoint, reduce_lr])
             model.save(model_name)
         else:
             model = unet()
             model.summary()
             model_checkpoint = ModelCheckpoint('unet.h5', monitor='val_loss', verbose=1, save_best_only=True)
-            model.fit(imgs_train, imgs_mask_train, batch_size=2, epochs=30, verbose=1,
+            model.fit(imgs_train, imgs_mask_train, batch_size=4, epochs=30, verbose=1,
                       validation_split=0.2, shuffle=True,
                       callbacks=[logging, model_checkpoint, reduce_lr, early_stopping])
             model.save(model_name)
@@ -68,6 +73,10 @@ class myUnet(object):
 
 
 if __name__ == '__main__':
-    myunet = myUnet()
-    myunet.train(load_pretrained=False)
-    myunet.test()
+    if gpus:
+        try:
+            myunet = myUnet()
+            myunet.train(load_pretrained=False)
+            myunet.test()
+        except RuntimeError as e:
+            print(e)
