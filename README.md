@@ -35,12 +35,12 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 <img src="https://github.com/devswha/keras-Unet/blob/master/images/patch.png" width="50%" height="50%"> <br/>Patch</td>
 </p>
 
-- The low overlap ratio enables speed improvement.
-- However, as patch size recognizes a wide range of images at once, the performance of context is good but the performance of localization is lower.
-- Thus, in the corresponding paper, the Unet architecture and overlap-tile methods were proposed to solve this localization problem.
 
-Overlap-tile
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/overlap_tile.png" width="100%" height="100%">
+- Patch method has low overlap ratio so that the speed of detection can be improvement.
+- However, as the wide size of patch detect image at once, the performance of context is good but the performance of localization is lower. 
+- In this paper, the U-net architecture and overlap-tile methods were proposed to solve this localization problem.
 
-- 전체 이미지는 크다보니 각 patch 별로 이미지를 인식하는데, patch 크기(노란색) 보다 Input이 클 경우가 있다.
-- 그럴 경우, 비어있는 부분을 patch 영역을 미러링하여 채워넣는다
+
+<img src="https://github.com/devswha/keras-Unet/blob/master/images/overlap_tile.png" width="100%" height="100%"> <br/>Overlap-tile</td>
+
+Simple. Because the EM image is large, sometimes the model of detection input is larger than the patch size (yellow). If so, mirror and fill in the patch area with the empty part.
