@@ -17,7 +17,7 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 
 
 <p align="center">
-    <img src="./images/ISBI.gif">
+    <img src="https://devswha.blog/wp-content/uploads/2020/06/ISBI.gif">
 </p>
 
 - Black and white segmentation of membrane and cell with EM(Electron Microscopic) image.
@@ -33,7 +33,7 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 </p>
 
 <p align="center">
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/patch.png" width="50%" height="50%"> <br/>Patch</td>
+<img src="https://devswha.blog/wp-content/uploads/2020/06/patch.png" width="50%" height="50%"> <br/>Patch</td>
 </p>
 
 
@@ -43,7 +43,7 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 
 
 <p align="center">
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/overlap_tile.png" width="100%" height="100%"> <br/>Overlap-tile</td>
+<img src="https://devswha.blog/wp-content/uploads/2020/06/overlap_tile.png" width="100%" height="100%"> <br/>Overlap-tile</td>
 </p>
 
 
@@ -149,7 +149,7 @@ To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?tex
 ## Network Architecture
 
 <p align="center">
-    <img src="https://github.com/devswha/keras-Unet/blob/master/images/unet.png" width="70%" height="70%">
+    <img src="https://devswha.blog/wp-content/uploads/2020/06/unet.png" width="70%" height="70%">
 </p>
 
 
@@ -169,7 +169,7 @@ To help with observation, a ![#ffff00](https://placehold.it/15/ffff00/000000?tex
 ## Result
 
 <p align="center">
-    <img src="https://github.com/devswha/keras-Unet/blob/master/images/result.gif" width="100%" height="100%">
+    <img src="https://devswha.blog/wp-content/uploads/2020/06/result.gif" width="100%" height="100%">
 </p>
 
 
