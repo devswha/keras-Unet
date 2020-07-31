@@ -29,7 +29,7 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 ## Overlap-tile
 
 <p align="center">
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/sliding_window.png" width="30%" height="30%"> <br/>Sliding window</td>
+<img src=https://devswha.blog/wp-content/uploads/2020/06/sliding_window.png" width="30%" height="30%"> <br/>Sliding window</td>
 </p>
 
 <p align="center">
