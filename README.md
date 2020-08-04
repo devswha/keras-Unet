@@ -17,7 +17,7 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 
 
 <p align="center">
-    <img src="./images/ISBI.gif">
+    <img src="https://github.com/devswha/keras-Unet/blob/master/images/ISBI.gif">
 </p>
 
 - Black and white segmentation of membrane and cell with EM(Electron Microscopic) image.
@@ -29,7 +29,7 @@ The dataset we used is Transmission Electron Microscopy (ssTEM) data set of the 
 ## Overlap-tile
 
 <p align="center">
-<img src="https://github.com/devswha/keras-Unet/blob/master/images/sliding_window.png" width="30%" height="30%"> <br/>Sliding window</td>
+<img src=https://github.com/devswha/keras-Unet/blob/master/images/sliding_window.png" width="30%" height="30%"> <br/>Sliding window</td>
 </p>
 
 <p align="center">
