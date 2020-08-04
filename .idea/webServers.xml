@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0af7399e-80d0-4ece-8e80-75bd3d964c02" name="deepnoid">
+        <fileTransfer rootFolder="/home/devswha/review" accessType="SFTP" host="10.1.2.12" port="22" sshConfigId="d9a0032a-f54b-4b06-a07c-6522b01e98bc" sshConfig="devswha@10.1.2.12:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
